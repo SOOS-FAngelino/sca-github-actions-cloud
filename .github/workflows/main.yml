@@ -6,12 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Run SOOS - Scan for vulnerabilities
-      uses: soos-io/soos-sca-github-action@v1.0.4 
+    - name: Run SOOS - Scan for vulnerabilities Dev
+      uses: soos-io/soos-sca-github-action@v1.1.0
       with:
         project_name: "PackageAware/sca-github-actions-cloud"
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
         api_url: "https://qa-api.soos.io/api/"
+        sarif: true
+        gpat: ${{ secrets.SOOS_GPAT }}
+    - name: Run SOOS - Scan for vulnerabilities Prod
+      uses: soos-io/soos-sca-github-action@v1.1.0
+      with:
+        project_name: "PackageAware/sca-github-actions-cloud"
+        client_id: ${{ secrets.SOOS_CLIENT_ID_PROD }}
+        api_key: ${{ secrets.SOOS_API_KEY_PROD }}
+        api_url: "https://api.soos.io/api/"
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
