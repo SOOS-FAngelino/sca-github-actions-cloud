@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run SOOS - Scan for vulnerabilities Dev
-      uses: soos-io/soos-sca-github-action@v1.1.0
+      uses: soos-io/soos-sca-github-action@v1.2.0
       with:
         project_name: "PackageAware/sca-github-actions-cloud"
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
@@ -17,7 +17,7 @@ jobs:
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
     - name: Run SOOS - Scan for vulnerabilities Prod
-      uses: soos-io/soos-sca-github-action@v1.1.0
+      uses: soos-io/soos-sca-github-action@v1.2.0
       with:
         project_name: "PackageAware/sca-github-actions-cloud"
         client_id: ${{ secrets.SOOS_CLIENT_ID_PROD }}
