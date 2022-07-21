@@ -13,7 +13,7 @@ jobs:
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
         api_url: "https://qa-api.soos.io/api/"
-        directories_to_exclude: "brew,dart,elixir"
+        directories_to_exclude: "brew,elixir"
         package_managers: ""
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
