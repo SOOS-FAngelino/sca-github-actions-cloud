@@ -24,5 +24,7 @@ jobs:
         client_id: ${{ secrets.SOOS_CLIENT_ID_PROD }}
         api_key: ${{ secrets.SOOS_API_KEY_PROD }}
         api_url: "https://api.soos.io/api/"
+        directories_to_exclude: "brew,dart,elixir"
+        package_managers: ""
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
